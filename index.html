@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Fira+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/earlyaccess/notosanstc.css' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/shuhei/material-colors/master/dist/colors.css">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/shuhei/material-colors/master/dist/colors.var.css">
+        <link rel="stylesheet" href="css/style.css">
+        //Non-slim version for animate function
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="js/navbar.js"></script>
+        <title>Anson S.C. Leung</title>
+
+    </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="50">
+        <nav class="navbar fixed-top navbar-light bg-light navbar-expand-md">
+            <div class="container">
+            <a class="navbar-brand" href="#"><strong>Anson S.C. Leung</strong></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navi" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navi" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#intro">Introduction</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#whoami">Who am I?</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#life">Univ. Life</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a>
+                        <li class="nav-item"><a class="nav-link" href="#contacts">Contacts</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header id="home">
+            <div class="container-fluid text-center">
+                <h1><span class="d-sm-inline-flex">Anson S.C. Leung 梁兆俊</span> <span class="d-sm-inline-flex"><small class="text-secondary">MC/CSCI/3 晨興計科三</small></span></h1>      
+                <p style="font-size: 1.5em"><i>Still not dead, am I?</i></p>
+                <!--<p>Some text that represents "Me"...</p>-->
+            </div>
+        </header>
+
+        <div id="intro" class="container-fluid text-center bg-grey-800">
+            <div class="row equal">
+                <div class="col-xs-12 col-md-4 text-md-right" id="portrait">
+                    <img src="img/Portrait.JPG" class="rounded img-fluid" style="align-items: center; ">
+                </div>
+                <div class="col-xs-12 col-md-8 text-md-left pt-5 pt-md-0">
+                    <h2>Hello!</h2>
+                    <p style="font-size: 1.25em">Greetings! This is Anson S.C. Leung. Third-year Computer Science undergraduate at the Chinese University of Hong Kong, <abbr title="Bronze Medalist, Senior Group, HKOI 2013/14; Silver Medalist, Junior Group, HKOI 2013">two-year medalist of Hong Kong Olympiad in Informatics (HKOI)</abbr>. I am also an entrepreneur who focus on technology and management.</p>
+                    <a href="http://ansonscleung.com" class="btn btn-info btn-lg"><span class="d-block d-sm-inline"><span class="fas fa-globe-asia"></span>Learn more</span><span class="d-block d-sm-inline">at ansonscleung.com</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="whoami" class="container-fluid text-center">
+            <h2>Who am I?</h2>
+            <p class="mb-0" style="font-size: 1.25em">Super Mad Guy! You can tell someone's mad when one picked Computer Science as major willingly. <br />A local Hongkonger living in an <abbr title="Morningside College">internationalised college</abbr> hostel is apparently insane. <br />What about involving in “politics” in the University? <br />And I'm a <mark>combination of all of them</mark>.</p>
+        </div>
+
+        <div id="life" class="container-fluid text-center text-light bg-blue-grey-600">
+            <h2>My university life</h2>
+            <div class="row equal">
+                <a href="http://council.cusu.hk/wp" class="col-md-6 text-light">
+                    <div class="gallery">
+                        <h3>CUSU Council<br />中大學生會代表會</h3>
+                        <img src="img/CURepCo.png" class="rounded img-fluid" style="width:100%" alt="Image">
+                        <p>Current Deputy Council Chair<br>Serving as an elected member for MCSU in 47~48<sup>th</sup> sessions</p>
+                    </div>
+                </a>
+                <a href="https://www.facebook.com/MCSURepCo" class="col-md-6 text-light">
+                    <div class="gallery">
+                        <h3>MCSU Representative Council<br />晨興書院學生會代表會</h3>
+                        <img src="img/MCRepCo.png" class="rounded img-fluid" style="width:100%" alt="Image">
+                        <p>“Retired” member<br>Vice-chairperson of the council in the 6<sup>th</sup> session</p>
+                    </div>
+                </a>
+            </div>
+            <a href="https://www.facebook.com/ascl.CUHK/" class="btn btn-light btn-lg"><span class="d-block d-sm-inline"><span class="fab fa-facebook"></span>Get latest news</span><span class="d-block d-sm-inline">from my Facebook Page</span></a>
+        </div>
+
+        <div id="projects" class="container-fluid text-center text-light bg-cyan-900"> 
+            <h2>My Projects</h2>
+            <div class="row equal">
+                <a href="https://gitlab.com/ansonscleung/ict-sba" class="col-lg-4 col-md-6 text-light">
+                    <div class="gallery">
+                        <h4>ICT SBA - Football Match Scoring</h4>
+                        <p>A crappy Pascal project for public exam</p>
+                        <img src="img/football.jpg" class="rounded img-fluid" alt="ICT SBA Project Page" desc="CC-BY-SA Jon Candy/Flickr">
+                    </div>
+                </a>
+                <a href="https://github.com/ansonscleung/FontProject" class="col-lg-4 col-md-6 text-light">
+                    <div class="gallery">
+                        <h4>Font Project</h4>
+                        <p>Trying to create a font while learning to use FontForge</p>
+                        <img src="img/FontForge.png" class="rounded img-fluid" alt="Font Project Page" desc="CC-BY-SA Saber Rastikerdar">
+                    </div>
+                </a>
+                <!--<div class="col-lg-4 col-sm-6 gallery"> 
+<h4>ICT SBA - Football Match Scoring</h4>
+<p>Lorem ipsum..</p>
+<img src="birds3.jpg" class="img-fluid" style="width:100%" alt="Image">
+</div>-->
+            </div>
+        </div>
+
+        <footer id="contacts" class="container-fluid text-center bg-light">
+            <div class="row equal">
+                <div class="col-sm-4">
+                    <a href="https://www.facebook.com/ansonscleung"><span class="fa-stack fa-lg" style="font-size:24px;"><i class="fa fa-circle fa-stack-2x"></i><i class="fab fa-facebook fa-stack-1x fa-inverse"></i></span></a>
+                    <a href="https://twitter.com/ansonscleung"><span class="fa-stack fa-lg" style="font-size:24px;"><i class="fa fa-circle fa-stack-2x"></i><i class="fab fa-twitter fa-stack-1x fa-inverse"></i></span></a>
+                    <a href="https://www.linkedin.com/in/ansonscleung/"><span class="fa-stack fa-lg" style="font-size:24px;"><i class="fa fa-circle fa-stack-2x"></i><i class="fab fa-linkedin fa-stack-1x fa-inverse"></i></span></a>
+                    <a href="mailto:scleung7@cse.cuhk.edu.hk"><span class="fa-stack fa-lg" style="font-size:24px;"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></a>
+                </div>
+                <div class="col-sm-8 pt-auto pb-auto bb-0">
+                    <p class="mb-0">Contents are &#169; 2017~2018 Anson S.C. Leung. <small>Bootstrap Theme Inspired By <a href="https://www.w3schools.com">www.w3schools.com</a></small></p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/scrolling-nav.js"></script>
+    </body>
+</html>
