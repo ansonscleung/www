@@ -1,6 +1,6 @@
-$(function ($) {
+(function ($) {
     "use strict";
-
+    
     $(window).scroll(function () {
         if ($(document).scrollTop() > 50) {
             $('nav').addClass('shrink');
@@ -8,4 +8,4 @@ $(function ($) {
             $('nav').removeClass('shrink');
         }
     });
-});
+})(jQuery);

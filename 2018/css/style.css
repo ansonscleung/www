@@ -1,48 +1,36 @@
-@media print {
-    @page {size: A4 landscape; }
-
-    .container-fluid {
-        padding: auto auto;
-    }
-}
-body { font-family: 'Inter', 'Noto Sans HK', 'Noto Sans JP', sans-serif; }
-/*@supports (font-variation-settings: normal) {
-body { font-family: 'Inter var experimental', 'Noto Sans HK', sans-serif; }
-}*/
 body {
-    /*font-family: "FF Meta VF", 'Fira Sans', 'Noto Sans HK', sans-serif;*/
+    font-family: 'Fira Sans', 'Noto Sans TC', sans-serif;
     line-height: 2.0;
-    font-size: 15px;
-    position: relative;
 }
 :lang(jp) 	{
-    font-family: 'Inter', 'Noto Sans JP', 'Noto Sans HK', sans-serif;
+    font-family: 'Fira Sans', 'Noto Sans JP', sans-serif;
 }
-.container-fluid {
-    padding: 4.5rem 5%;
+div.container-fluid {
+    padding: 70px 5%;
 }
 .navbar {
-    padding: .5rem 1rem;
+    margin-bottom: 0;
+    border: 0;
+    padding: 15px 0;
     z-index: 1;
     box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
-    /* Animation */
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
+
 .navbar.shrink {
-    padding: 0 1rem;
-    min-height: 2rem;
-    /* Animation */
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
+    padding: 0px 0;
+    min-height: 35px;
 }
 @media (min-width: 992px){
-    .navbar, .navbar.shrink {padding-left: 10rem;}
-    .navbar-brand {
-        margin-right: 2rem;
-    }
     .navbar .nav-link {
-        margin-right: 1rem;
+        margin-right: 15px;
+        // Animation
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+    .navbar.shrink .nav-link {
+        margin-right: 0;
     }
 }
 .navbar-nav li a:hover {
@@ -54,7 +42,7 @@ body {
 .active a{
     border-radius: 10px !important;
 }
-#home {
+header {
     background-image: url("../img/header.jpg");
     background-position: center 40%;
     -webkit-background-size: cover;
@@ -62,57 +50,40 @@ body {
     -o-background-size: cover;
     background-size: cover;
     background-attachment: fixed;
-    color: white;
-}
-header {
-    height: 100vh;
-}
-header>div {
-    margin-top: 4rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 200px 0;
+    margin-top: 80px;
 }
 span {
     padding-right: 5px;
     margin: 0 auto;
 }
 /*For xs-sm devices*/
-.heading h1 {
+#home div h1 {
     font-weight: 900;
     font-size: 7vmax;
-    -webkit-text-stroke: 1px var(--md-grey-800);
-    text-shadow: 2px 2px 4px var(--md-grey-800);
+    -webkit-text-stroke: 1px #424242;
 }
-.heading h1 small {
+#home div h1 small {
     font-weight: 900;
-    -webkit-text-stroke: .25px white;
-    text-shadow: 1px 1px 4px white;
-}
-.heading p {
-    font-size: 3vmax;
-    text-shadow: 2px 2px var(--md-grey-800);
+    -webkit-text-stroke: .25px #ffffff;
 }
 /*For md-lg-xl devices*/
 @media (min-width: 992px){
-    .heading h1 {
+    #home div h1 {
         font-weight: 900;
         font-size: 4.5vmax;
-        -webkit-text-stroke: 1.5px var(--md-grey-800);
-        text-shadow: 2px 2px 4px var(--md-grey-800);
+        -webkit-text-stroke: 1.5px #424242;
     }
-    .heading h1 small {
+    #home div h1 small {
         font-weight: 900;
-        -webkit-text-stroke: .5px white;
-        text-shadow: 2px 2px 4px white;
-    }
-    .heading p {
-        font-size: 1.5vmax;
-        text-shadow: 2px 2px var(--md-grey-800);
+        -webkit-text-stroke: .5px #ffffff;
     }
 }
-h2 {
-    font-weight: 600;
-}
-h3 {
-    font-weight: 400;
+#home div p {
+    font-size: 1.5vmax;
+    text-shadow: 2px 2px #424242;
 }
 #intro {
     padding: 70px 15%;
@@ -131,13 +102,13 @@ h3 {
     padding: 15px 0;
 }
 @media (min-width: 992px){
-    #life {    
-        padding: 70px 15%;
+#life {    
+    padding: 70px 15%;
+}
+}
+    #life div {
+        padding: 15px 0;
     }
-}
-#life div {
-    padding: 15px 0;
-}
 #life img {
     padding: 15px 0;
     max-width: 200px;
@@ -185,6 +156,6 @@ footer {
     display: fixed;
     padding: 30px 0;
 }
-.hover:hover {
-    color: var(--md-blue-500) !important;
+#gen {
+    min-height: 100%;
 }

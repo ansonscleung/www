@@ -1,4 +1,4 @@
-$("nav").load("./header.html #nav", function() {
+$(document).ready(function($) {
     "use strict";
     
     // Add scrollspy to <body>
@@ -8,7 +8,7 @@ $("nav").load("./header.html #nav", function() {
     $("#navi a").on('click', function(event) {
 
         // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "" && this.pathname == window.location.pathname) {
+        if (this.hash !== "") {
 
             // Prevent default anchor click behavior
             event.preventDefault();
@@ -20,13 +20,13 @@ $("nav").load("./header.html #nav", function() {
             // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
             $('html, body').animate({
                 scrollTop: $(hash).offset().top
-            }, 750, function(){
+            }, 800, function(){
 
                 // Add hash (#) to URL when done scrolling (default click behavior)
                 window.location.hash = hash;
             });
-            
+
         } // End if
-        $('.collapse').collapse('hide');
+
     });
 });
