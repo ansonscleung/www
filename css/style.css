@@ -188,3 +188,6 @@ footer {
 .hover:hover {
     color: var(--md-blue-500) !important;
 }
+.cv-table tbody th, td{
+     vertical-align: top;
+}
