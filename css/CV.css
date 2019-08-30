@@ -1,0 +1,56 @@
+@media print {
+    @page {size: A4 portrait; margin: 0mm;}
+
+    body {
+        margin: 2em;
+    }
+
+    .container-fluid {
+        padding: 0 0;
+    }
+
+    .cv {
+        margin-top: 0 !important;
+        line-height: 1.55 !important;
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+}
+.cv {
+    font-size: 1.25em;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    line-height: 1.75 !important;
+}
+.cv-table {
+    margin-top: 2rem;
+}
+.cv-table tbody th, .cv-table tbody td{
+    vertical-align: top;
+    padding-bottom: 1rem;
+}
+.cv a {
+    color: inherit !important;
+}
+.desc-pre th, .desc-pre td{
+    padding-bottom: 0 !important;
+}
+.desc-pre td{
+    font-weight: 300 !important;
+    font-style: italic;
+    font-size: 90%;
+}
+.cv-table tbody th{
+    width: 12.5rem;
+}
+.desc {
+    padding-top: 0.25rem;
+    font-weight: 300 !important;
+    font-size: 80%;
+}
+span.chi {
+    position: absolute;
+    left: 30rem;
+}
