@@ -1,5 +1,5 @@
 $(function ($) {
-    $.getJSON('../src/quote.json', function(data) {
+    $.getJSON('src/quote.json', function(data) {
         quote = data.quotes[Math.floor(Math.random() * data.quotes.length)];
         $('#quote_eng').text(quote.quote.eng);
         $('#quote_chi').text(quote.quote.chi);
