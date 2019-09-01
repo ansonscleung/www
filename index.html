@@ -5,17 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href='https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i,900,900i|Noto+Sans+HK:300,400,700,900|Noto+Sans+JP:300,400,700,900&display=swap&subset=chinese-hongkong,japanese' rel='stylesheet' type='text/css'>
+        <link href='https://cdn.jsdelivr.net/gh/reinhart1010/aileron@master/aileron.min.css' rel='stylesheet' type='text/css'>
         <link href='https://variablefonts.monotype.com/MetaVariableDemo-Set.css' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.rawgit.com/shuhei/material-colors/master/dist/colors.css">
-        <link rel="stylesheet" href="https://cdn.rawgit.com/shuhei/material-colors/master/dist/colors.var.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/shuhei/material-colors@master/dist/colors.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/shuhei/material-colors@master/dist/colors.var.css">
         <link rel="stylesheet" href="css/style.css">
         <!-- Non-slim version for animate function -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
         <script src="js/navbar.js"></script>
+        <script src="js/quote.js"></script>
         <title>Anson S.C. Leung</title>
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -24,11 +27,28 @@
         <header id="home" class="d-flex">
             <div class="container-fluid d-flex justify-content-center align-items-center text-center">
                 <div class="heading">
-                    <h1><span class="d-sm-inline-flex">Anson S.C. Leung 梁兆俊</span> <span class="d-sm-inline-flex"><small class="text-secondary">MC/CSCI/3 晨興計科三</small></span></h1>
-                    <p class="my-0"><i>Still not dead, am I?</i></p>
+                    <h1><span class="d-block d-lg-inline-flex">Anson S.C. Leung</span> <span class="d-block d-lg-inline-flex">梁兆俊</span></h1>
+                    <h2><span class="d-sm-inline-flex text-secondary">MC/CSCI/4 晨興計科四</span></h2>
+                    <p class="my-0"><i>Fighting 'till the endgame.</i></p>
                 </div>
             </div>
         </header>
+
+        <div id="quote" class="container-fluid text-center bg-yellow-100">
+            <div class="row equal">
+                <div class="col-xs-12 col-xl-3 text-xl-right pr-xl-5">
+                    <h2>Quote of the day</h2>
+                </div>
+                <div class="col-xs-12 col-xl-9 text-xl-left pt-3 pt-xl-0">
+                    <blockquote class="blockquote">
+                        <p class="my-0" id="quote_eng"></p>
+                        <p class="my-0" id="quote_chi"></p>
+                        <footer class="blockquote-footer"><span id="from_eng"></span>, <cite title="Source Title" id="source_eng"></cite>, <span id="date_eng"></span></footer>
+                        <footer class="blockquote-footer"><span id="from_chi"></span>，<cite title="Source Title" id="source_chi"></cite>，<span id="date_chi"></span></footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
 
         <div id="intro" class="container-fluid text-center bg-grey-800">
             <div class="row equal">
@@ -38,7 +58,7 @@
                 <div class="col-xs-12 col-md-8 text-md-left pt-5 pt-md-0">
                     <h2>Hello!</h2>
                     <p style="font-size: 1.25em">Greetings! This is Anson S.C. Leung. Third-year Computer Science undergraduate at the Chinese University of Hong Kong, <abbr title="Bronze Medalist, Senior Group, HKOI 2013/14; Silver Medalist, Junior Group, HKOI 2013">two-year medalist of Hong Kong Olympiad in Informatics (HKOI)</abbr>. I am also an entrepreneur who focus on technology and management.</p>
-                    <a href="http://ansonscleung.com" class="btn btn-info btn-lg"><span class="d-block d-sm-inline"><span class="fas fa-globe-asia pr-2"></span>Learn more</span><span class="d-block d-sm-inline">at ansonscleung.com</span></a>
+                    <a href="http://ansonscleung.com" class="btn btn-info btn-lg"><span class="d-block d-sm-inline"><span class="fas fa-globe-asia pr-2"></span>Learn more</span> <span class="d-block d-sm-inline">at ansonscleung.com</span></a>
                 </div>
             </div>
         </div>
@@ -51,22 +71,29 @@
         <div id="life" class="container-fluid text-center text-light bg-blue-grey-600">
             <h2>My university life</h2>
             <div class="row equal">
-                <a href="http://council.cusu.hk/wp" class="col-md-6 text-light">
-                    <div class="gallery">
-                        <h3>CUSU Council<br />中大學生會代表會</h3>
-                        <img src="img/CURepCo.png" class="rounded img-fluid" style="width:100%" alt="Image">
-                        <p>Deputy/Acting Council Chair, 48<sup>th</sup> session <small>(2018~19)</small><br>Elected Member for MCSU, 47~48<sup>th</sup> sessions <small>(2017~19)</small></p>
-                    </div>
-                </a>
-                <a href="https://www.facebook.com/MCSURepCo" class="col-md-6 text-light">
+                <a href="https://www.facebook.com/MCSURepCo" class="col-md-4 text-light">
                     <div class="gallery">
                         <h3>MCSU Representative Council<br />晨興書院學生會代表會</h3>
-                        <img src="img/MCRepCo.png" class="rounded img-fluid" style="width:100%" alt="Image">
+                        <img src="https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/12919713_1533854363577615_4541865730818215679_n.png?_nc_cat=105&_nc_oc=AQn0nEGPbiQMbZY8AwJ1gFVcO9BpnpU7O5AhEzuhItjWwLABj1VqGXcK9YVxVhpJZl9r_TLpf6IUN5n-_MxILD9y&_nc_ht=scontent-hkg3-1.xx&oh=bda74fd88c56f69c4f2c7b969663f085&oe=5DFF8DE7" class="rounded img-fluid" style="width:100%" alt="Image">
                         <p>Vice-chairperson of the council, 6<sup>th</sup> session <small>(2017~18)</small><br>Representative, 6~7<sup>th</sup> sessions <small>(2017~19)</small></p>
                     </div>
                 </a>
+                <a href="https://council.cusu.hk/" class="col-md-4 text-light">
+                    <div class="gallery">
+                        <h3>CUSU Council<br />中大學生會代表會</h3>
+                        <img src="https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/19593_363761857155609_680698809689861149_n.png?_nc_cat=107&_nc_oc=AQndw8eI1IfM48Z09RV9Y3bkkZ3kRRJBh0Yun29u0-QzKj4-6xM42eBKHUqKOHDIpI3t89YWs-VkeBls7KE-AGbV&_nc_ht=scontent-hkg3-1.xx&oh=c5a31a1461c9d4194afb5187f2cbfb94&oe=5DC9998F" class="rounded img-fluid" style="width:100%" alt="Image">
+                        <p>Deputy/Acting Council Chair, 48<sup>th</sup> session <small>(2018~19)</small><br>Elected Member for MCSU, 47~48<sup>th</sup> sessions <small>(2017~19)</small></p>
+                    </div>
+                </a>
+                <a href="https://www.facebook.com/cuacs24/" class="col-md-4 text-light">
+                    <div class="gallery">
+                        <h3>CU Animation &amp; Comic Society<br />中大動漫畫研究社</h3>
+                        <img src="https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/57001929_577774616053073_4344498001318772736_n.png?_nc_cat=101&_nc_oc=AQn_WOkESyjt-vNrWjhuN55x3HFjICOayMUgpD2_1igE9sBK0GaJdH31SePk2S5nR3beD3qIluODeCUy0_zG7c7V&_nc_ht=scontent-hkg3-1.xx&oh=96d624f78bc15bbc9b9cda1d33ad6aed&oe=5E0E65C3" class="rounded img-fluid" style="width:100%" alt="Image">
+                        <p>Publication Officer, 24<sup>th</sup> session <small>(2019~20)</small><br>except "no stake in the society"</p>
+                    </div>
+                </a>
             </div>
-            <a href="https://www.facebook.com/ascl.CUHK/" class="btn btn-light btn-lg"><span class="d-block d-sm-inline"><span class="fab fa-facebook pr-2"></span>Get latest news</span><span class="d-block d-sm-inline">from my Facebook Page</span></a>
+            <a href="https://www.facebook.com/ascl.CUHK/" class="btn btn-light btn-lg"><span class="d-block d-sm-inline"><span class="fab fa-facebook pr-2"></span>Get latest news</span> <span class="d-block d-sm-inline">from my Facebook Page</span></a>
         </div>
 
         <div id="projects" class="container-fluid text-center text-light bg-cyan-900"> 

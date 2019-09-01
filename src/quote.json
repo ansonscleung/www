@@ -1,0 +1,33 @@
+{
+    "quotes": [
+    {
+        "quote": {
+            "eng": "Those who make peaceful revolution impossible will make violent revolution inevitable.",
+            "chi" : "使和平革命不可成真之人會使暴力革命不可避免。"
+        },
+        "from": {
+            "eng": "John F. Kennedy",
+            "chi": "甘迺迪"
+        },
+        "source": {
+            "eng": "Remarks on the first anniversary of the Alliance for Progress",
+            "chi": "進步結盟一周年紀念"
+        },
+        "date": "1962-03-13"
+    },{
+        "quote": {
+            "eng": "A revolution is not a dinner party, or writing an essay, or painting a picture, or doing embroidery; it cannot be so refined, so leisurely and gentle, so temperate, kind, courteous, restrained and magnanimous. A revolution is an insurrection, an act of violence by which one class overthrows another.",
+            "chi" : "革命不是請客吃飯，不是做文章，不是繪畫繡花，不能那樣雅緻，那樣從容不迫，文質彬彬，那樣溫良恭讓。革命就是暴動，是一個階級推翻一個階級的暴烈的行動。"
+        },
+        "from": {
+            "eng": "Mao Zedong",
+            "chi": "毛澤東"
+        },
+        "source": {
+            "eng": "Report on an Investigation of the Peasant Movement in Hunan",
+            "chi": "湖南農民運動考察報告"
+        },
+        "date": "1927-03-05"
+    }
+    ]
+}

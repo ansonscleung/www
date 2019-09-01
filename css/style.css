@@ -5,7 +5,7 @@ body { font-family: 'Inter var experimental', 'Noto Sans HK', sans-serif; }
 body {
     /*font-family: "FF Meta VF", 'Fira Sans', 'Noto Sans HK', sans-serif;*/
     line-height: 2.0;
-    font-size: 15px;
+    font-size: 16px;
     position: relative;
 }
 :lang(jp) 	{
@@ -64,7 +64,7 @@ header>div {
     margin-top: 4rem;
 }
 span {
-    padding-right: 5px;
+    /*padding-right: 5px;*/
     margin: 0 auto;
 }
 /*For xs-sm devices*/
@@ -74,8 +74,9 @@ span {
     -webkit-text-stroke: 1px var(--md-grey-800);
     text-shadow: 2px 2px 4px var(--md-grey-800);
 }
-.heading h1 small {
+.heading h2 {
     font-weight: 900;
+    font-size: 4.5vmax;
     -webkit-text-stroke: .25px white;
     text-shadow: 1px 1px 4px white;
 }
@@ -84,20 +85,21 @@ span {
     text-shadow: 2px 2px var(--md-grey-800);
 }
 /*For md-lg-xl devices*/
-@media (min-width: 992px){
+@media (min-width: 768px){
     .heading h1 {
         font-weight: 900;
-        font-size: 4.5vmax;
+        font-size: 9vh;
         -webkit-text-stroke: 1.5px var(--md-grey-800);
         text-shadow: 2px 2px 4px var(--md-grey-800);
     }
-    .heading h1 small {
+    .heading h2 {
         font-weight: 900;
+        font-size: 5vh;
         -webkit-text-stroke: .5px white;
         text-shadow: 2px 2px 4px white;
     }
     .heading p {
-        font-size: 1.5vmax;
+        font-size: 3vh;
         text-shadow: 2px 2px var(--md-grey-800);
     }
 }
@@ -176,8 +178,20 @@ h3 {
 }
 footer {
     display: fixed;
-    padding: 30px 0;
+    padding: 1rem 0;
 }
 .hover:hover {
     color: var(--md-blue-500) !important;
+}
+.blockquote-footer {
+    padding: 0;
+}
+#source_chi::before {
+    content: "《";
+}
+#source_chi::after {
+    content: "》";
+}
+#source_chi {
+    font-style: normal;
 }
