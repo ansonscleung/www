@@ -1,9 +1,6 @@
 @media print {
-    @page {size: A4 portrait; margin: 0mm;}
-
-    body {
-        margin: 2em;
-    }
+    /*font-size: 12pt;*/
+    @page {size: A4 portrait; }
 
     .container-fluid {
         padding: 0 0;
@@ -11,29 +8,89 @@
 
     .cv {
         margin-top: 0 !important;
-        padding-top: 0 !important;
-        line-height: 1.55 !important;
+        padding-top: 1rem !important;
+        font-size: 0.95em !important;
+        line-height: 1.5 !important;
     }
 
     a {
         text-decoration: none !important;
     }
 
+    h2 {
+        font-size: 1.75em !important;
+    }
+
     .d-abs {
-        position: absolute;
+        position: fixed !important;
+        top: 0;
+        right: 0;
+        max-width: 35%;
+        height: 100%;
+        color: white;
+        background-color: #546e7a;
+        padding: 2rem;
+    }
+
+    .print-text-center {
+        text-align: center;
+    }
+
+    .cv-body {
+        max-width: 65%;
+        margin: 0;
+    }
+
+    .personal {
+        text-align: left;
+        display: inline-flex;
+        margin-right: 2rem;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+
+    .col-md-7.col-lg-6 {
+        width: 60%;
+    }
+
+    .cv-table {
+        margin-top: 1rem;
+    }
+    .cv > div {
+        margin-bottom: 1rem;
     }
 }
-.cv {
-    font-size: 1.25em;
-    margin-top: 4rem;
-    padding-top: 2rem;
-    line-height: 1.75 !important;
+@media screen {
+    .d-abs {
+        position: static;
+    }
+    .cv {
+        font-size: 1.25em;
+        margin-top: 4rem;
+        padding-top: 2rem;
+        line-height: 1.75 !important;
+    }
+    .cv-table {
+        margin-top: 2rem;
+    }
+    .cv > div {
+        margin-bottom: 2rem;
+    }
+    .personal {
+        text-align: center;
+        display: inline-block;
+        margin-right: 2rem;
+    }
 }
-.cv > div {
-    margin-bottom: 2rem;
+@media (max-width: 1023px){
+    .cv-table {
+        width: 100%;
+    }
 }
-.cv-table {
-    margin-top: 2rem;
+@media (min-width: 1024px){
+    .cv-table {
+        width: 55rem;
+    }
 }
 .cv-table tbody th, .cv-table tbody td{
     vertical-align: top;
@@ -58,43 +115,20 @@
     font-weight: 300 !important;
     font-size: 80%;
 }
-span.chi {
+.chi {
     position: absolute;
     left: 30rem;
 }
-.personal {
-    text-align: center;
-    display: inline-block;
-    margin-right: 2rem;
-}
-.personal i {
+.personal i, .personal span {
     vertical-align: middle;
     font-size: 125%;
     margin-right: 0.5rem;
+    padding: auto;
+}
+.personal {
+    vertical-align: middle;
 }
 .personal img {
-    vertical-align: bottom;
+    vertical-align: middle;
     margin-right: 0.5rem;
-}
-.d-abs {
-    position: static;
-}
-/*@media (min-width: 992px){*/
-    @media print {
-    .d-abs {
-        position: fixed;
-        top: 0;
-        right: 5%;
-        max-width: 30%;
-        height: 100%;
-        text-align: center;
-        color: white;
-        background-color: #546e7a;
-        padding: 2rem;
-    }
-    .personal {
-        text-align: left;
-        display: block;
-        margin-right: 2rem;
-    }
 }

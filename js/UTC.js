@@ -11,7 +11,21 @@ function timeChange(offset, round){
     $("#UTCtz").html((tzOffset.hr<0?"":"+") + tzOffset.hr + (tzOffset.min == 0?"":(":"+tzOffset.min.toString().padStart(2, '0'))));
 };
 
+function UTCCalc(utz, sleep, wake, mid){
+    var uMid = moment.tz((sleep+wake)/2, utz);
+    console.log(utz + ": " + sleep.tz(utz).format() + ", " + wake.tz(utz).format() + ", " + uMid.tz(utz).format());
+    console.log("User Sleep time median: " + uMid.tz(utz).format('HH:mm'));
+    console.log("User Sleep time median (UTC): " + moment.utc(uMid).format('HH:mm'));
+    var dur = moment.duration(uMid.diff(mid));
+    console.log("Sleep time offset: " + dur.hours() + ":" + dur.minutes().toString().padStart(2, '0'));
+    timeChange(Math.round(dur.asMinutes()/60)*60, true);
+    $("#share").attr("data-content", location.host + location.pathname + '?' + $.param({tz: utz, sleep: sleep.utc().format(), wake: wake.utc().format()}));
+}
+
 $(document).ready(function($) {
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
     $.fn.datetimepicker.Constructor.Default = $.extend({}, $.fn.datetimepicker.Constructor.Default, {
         icons: {
             time: 'far fa-clock',
@@ -25,7 +39,10 @@ $(document).ready(function($) {
             close: 'far fa-times'
         }
     });
-    timeChange(moment.tz.zone(moment.tz.guess(true)).utcOffset(moment()), false);
+    // Source: https://stackoverflow.com/a/20336097
+    var captureTz = (location.search.split('tz=')[1]||'').split('&')[0];
+    var currtz = captureTz ? decodeURIComponent(captureTz) : moment.tz.guess(true);
+    moment.tz.setDefault(currtz);
     // Data source: https://academic.oup.com/sleep/article/31/2/185/2454134
     var sleep = moment.utc("00:32", "hh:mm");
     var wake = moment.utc("10:31", "hh:mm");
@@ -39,16 +56,21 @@ $(document).ready(function($) {
                     .text(value));
     });
     $('select').selectpicker();
-    var currtz = moment.tz.guess(true);
     $('#tz_picker').val(currtz).change();
+
+    var captureSleep = decodeURIComponent((location.search.split('sleep=')[1]||'').split('&')[0]);
+    var captureWake = decodeURIComponent((location.search.split('wake=')[1]||'').split('&')[0]);
+    if (moment(captureSleep).isValid() && moment(captureWake).isValid()) {
+        UTCCalc(currtz, moment.tz(captureSleep, currtz), moment.tz(captureWake, currtz), mid);
+    } else timeChange(moment.tz.zone(currtz).utcOffset(moment()), false);
     $('#bed_timepicker').datetimepicker({
         format: 'DD-MM-YYYY HH:mm',
-        defaultDate: moment("00:32", "hh:mm")
+        defaultDate: moment(captureSleep).isValid() ? captureSleep : sleep
     });
     $('#wake_timepicker').datetimepicker({
         useCurrent: false,
         format: 'DD-MM-YYYY HH:mm',
-        defaultDate: moment("10:31", "hh:mm")
+        defaultDate: moment(captureWake).isValid() ? captureWake : wake
     });
     $('#tz_picker').on('change', function() {
         currtz = this.value;
@@ -64,16 +86,8 @@ $(document).ready(function($) {
         $('#bed_timepicker').datetimepicker('maxDate', e.date);
     });
     $(document).on("click", "#submit", function () {
-        var uSleep = moment.tz($('#bed_timepicker').datetimepicker('date'), currtz);
-        var uWake = moment.tz($('#wake_timepicker').datetimepicker('date'), currtz);
-        var uMid = moment.tz((uSleep+uWake)/2, currtz);
-        console.log(currtz + ": " + uSleep.tz(currtz).format() + ", " + uWake.tz(currtz).format() + ", " + uMid.tz(currtz).format());
-        console.log("User Sleep time median: " + uMid.tz(currtz).format('HH:mm'));
-        console.log("User Sleep time median (UTC): " + moment.utc(uMid).format('HH:mm'));
-        var dur = moment.duration(uMid.diff(mid));
-        console.log("Sleep time offset: " + dur.hours() + ":" + dur.minutes().toString().padStart(2, '0'));
-        timeChange(Math.round(dur.asMinutes()/60)*60, true);
-        //alert(sleep.format('DD-MM-YYYY HH:mm') + ", " + wake.format('DD-MM-YYYY HH:mm') + ", " + moment((sleep+wake)/2).format('DD-MM-YYYY HH:mm') + ", " + mid.format('DD-MM-YYYY HH:mm') + "\nDiff: " + dur.asMinutes() + " " + dur.hours());
+        UTCCalc(currtz, moment.tz($('#bed_timepicker').datetimepicker('date'), currtz), 
+                moment.tz($('#wake_timepicker').datetimepicker('date'), currtz), mid);
         $('#UTCModal').modal('hide');
     });
 });
