@@ -3,7 +3,7 @@
     @page {size: A4 portrait; }
 
     .container-fluid {
-        padding: 0 0;
+        padding: auto 0;
     }
 
     .cv {
@@ -59,6 +59,10 @@
     .cv > div {
         margin-bottom: 1rem;
     }
+	.personal img {
+		position: relative;
+		top: -4px;
+	}
 }
 @media screen {
     .d-abs {
@@ -81,6 +85,10 @@
         display: inline-block;
         margin-right: 2rem;
     }
+	.personal img {
+		position: relative;
+		top: -2px;
+	}
 }
 @media (max-width: 1023px){
     .cv-table {
@@ -119,16 +127,16 @@
     position: absolute;
     left: 30rem;
 }
-.personal i, .personal span {
+.personal i, .personal .fas {
     vertical-align: middle;
     font-size: 125%;
     margin-right: 0.5rem;
     padding: auto;
 }
+.personal img {
+	vertical-align: middle;
+	margin-right: 0.5rem;
+}
 .personal {
     vertical-align: middle;
-}
-.personal img {
-    vertical-align: middle;
-    margin-right: 0.5rem;
 }
