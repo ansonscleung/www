@@ -1,5 +1,9 @@
+body { font-family: 'Inter', 'Noto Sans HK', 'Noto Sans JP', sans-serif; }
+/*@supports (font-variation-settings: normal) {
+body { font-family: 'Inter var experimental', 'Noto Sans HK', sans-serif; }
+}*/
 body {
-    font-family: 'Inter', 'Noto Sans HK', 'Noto Sans JP', sans-serif;
+    /*font-family: "FF Meta VF", 'Fira Sans', 'Noto Sans HK', sans-serif;*/
     line-height: 2.0;
     font-size: 16px;
     position: relative;
@@ -38,6 +42,7 @@ body {
     background-color: var(--md-grey-600) !important;
     color: var(--md-grey-100) !important;
     border-radius: 10px !important;
+    padding-left: 8px;
 }
 .active a{
     border-radius: 10px !important;
@@ -119,6 +124,11 @@ h3 {
 }
 #intro p, #whoami p {
     padding: 15px 0;
+}
+@media (min-width: 992px){
+    #life {
+        padding: 70px 15%;
+    }
 }
 #life div {
     padding: 15px 0;
